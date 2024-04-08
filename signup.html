@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemmawy - Signup</title>
+    <link rel="icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url("555.jpg") no-repeat center center fixed;
+            background-size: cover;
+            padding-top: 60px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #8e44ad;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+        }
+
+        .header-center {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            animation: appear 1s ease-out forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 60px);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #8d44ad;
+            font-weight: 700;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inline-fields {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"],
+        .login-form input[type="number"],
+        .login-form input[type="email"],
+        .login-form input[type="date"],
+        .login-form select {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            border: 1px solid #cccccc;
+            width: 100%;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .login-form input:focus,
+        .login-form select:focus {
+            border: 1px solid #8e44ad;
+            box-shadow: 0 2px 6px #8e44ad4d;
+            outline: none;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: #8e44ad;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .login-form button:hover {
+            background-color: #732d91;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            background-color: #8e44ad;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            animation: logo-spin 5s infinite linear;
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .navigation, .header-buttons {
+            display: left;
+        }
+
+        .navigation li {
+            list-style-type: none;
+        }
+
+        .navigation li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navigation li a:hover {
+            color: #ddd;
+        }
+
+        .header-buttons {
+            justify-content: flex-end;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #f78115;
+            color: #000;
+            border: 2px solid #f78115;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #ffa500;
+            color: #fff;
+            border-color: #ffa500;
+        }
+        login-container {
+    max-width: 90%; /* Instead of 400px, make it relative to the viewport width */
+    padding: 5%; /* Relative padding */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="number"],
+.login-form input[type="email"],
+.login-form input[type="date"],
+.login-form select {
+    padding: 5%; /* Use relative padding */
+}
+
+/* Media Queries */
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+    .inline-fields input {
+        /* Stack the inputs vertically on smaller screens */
+        width: 100%;
+        margin-bottom: 10px; /* Adjust spacing */
+    }
+}
+
+/* Adjustments for mobile phones */
+@media (max-width: 480px) {
+    header .header-left, header .header-center, header .header-right {
+        /* Stack header elements vertically */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px; /* Smaller logo for mobile */
+    }
+
+    .login-container {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <nav class="navigation">
+                <li><a id="nav-about" href="index.html">Home Page</a></li>
+            </nav>
+        </div>
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-buttons">
+                <button id="lang-toggle" onclick="toggleLanguage()">العربي من هنا يا جيماوي</button>
+            </div>
+        </div>
+    </header>
+    <div class="login-container" id="main-container">
+        <h2 id="signup-title">Sign Up</h2>
+        <form class="login-form" id="signupForm" onsubmit="return validatePassword()">
+            <div class="inline-fields">
+                <input type="text" id="first-name" placeholder="First Name" required>
+                <input type="text" id="last-name" placeholder="Last Name" required>
+            </div>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <select id="country-select" name="countries" required>
+                <option value="">Country</option>
+                <!-- Options will be populated here by the script -->
+            </select>
+            <select id="gender-select" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit" id="submit-btn">Sign Up</button>
+        </form>
+    </div>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+        fetch('https://restcountries.com/v2/all')
+            .then(response => response.json())
+            .then(data => {
+                const selectElement = document.querySelector('select[name="countries"]');
+                data.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.alpha3Code;
+                    option.textContent = country.name;
+                    selectElement.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error fetching countries:', error));
+        document.addEventListener('DOMContentLoaded', function() {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById("dob").setAttribute('max', today);
+            document.getElementById("dob").setAttribute('min', '1970-01-01');
+        });
+
+        let isArabic = false;
+
+        function toggleLanguage() {
+            isArabic = !isArabic; // Toggle the language state
+            document.getElementById('main-container').style.direction = isArabic ? 'rtl' : 'ltr';
+            document.getElementById('signup-title').textContent = isArabic ? 'تسجيل' : 'Sign Up';
+            document.getElementById('first-name').placeholder = isArabic ? 'الاسم الأول' : 'First Name';
+            document.getElementById('last-name').placeholder = isArabic ? 'اسم العائلة' : 'Last Name';
+            document.getElementById('dob').placeholder = isArabic ? 'تاريخ الميلاد' : 'Date of Birth';
+            document.getElementById('country-select').options[0].text = isArabic ? 'الدولة' : 'Country';
+            document.getElementById('gender-select').options[0].text = isArabic ? 'اختر الجنس' : 'Select Gender';
+            document.getElementById('gender-select').options[1].text = isArabic ? 'ذكر' : 'Male';
+            document.getElementById('gender-select').options[2].text = isArabic ? 'أنثى' : 'Female';
+            document.getElementById('email').placeholder = isArabic ? 'البريد الإلكتروني' : 'Email';
+            document.getElementById('password').placeholder = isArabic ? 'كلمة المرور' : 'Password';
+            document.getElementById('confirm-password').placeholder = isArabic ? 'تأكيد كلمة المرور' : 'Confirm Password';
+            document.getElementById('submit-btn').textContent = isArabic ? 'تسجيل' : 'Sign Up';
+            document.getElementById('nav-about').textContent = isArabic ? 'الصفحة الرئيسية' : 'Home Page';
+            document.getElementById('lang-toggle').textContent = isArabic ? 'English' : 'العربي من هنا يا جيماوي';
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            if (password != confirmPassword) {
+                alert(isArabic ? "كلمات المرور غير متطابقة." : "Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+//         document.getElementById("nav-about").addEventListener("click", function(event) {
+//     // Prevent default action (scrolling to #about-title)
+//     event.preventDefault();
+    
+//     // Redirect to another page
+//     window.location.href = "Home Page.html";
+// });
+    </script>
+</body>
+</html>

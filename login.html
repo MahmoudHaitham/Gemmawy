@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Gemmawy - Login</title>
+    <link rel="icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url("555.jpg") no-repeat center center fixed;
+            background-size: cover;
+            padding-top: 180px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #8e44ad;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+        }
+
+        .header-center {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+        }
+
+        .navigation li {
+            list-style-type: none;
+        }
+
+        .navigation li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navigation li a:hover {
+            color: #ddd;
+        }
+
+        .logo img {
+            height: 60px;
+            animation: logo-spin 5s infinite linear;
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            animation: appear 1s ease-out forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #8d44ad;
+            font-weight: 700;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            border: 1px solid #cccccc;
+            width: 100%;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .login-form input[type="text"]:focus,
+        .login-form input[type="password"]:focus {
+            border: 1px solid #8e44ad;
+            box-shadow: 0 2px 6px #8e44ad4d;
+            outline: none;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: #8e44ad;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .login-form button:hover {
+            background-color: #732d91;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #f78115;
+            color: #000;
+            border: 2px solid #f78115;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #ffa500;
+            color: #fff;
+            border-color: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <nav class="navigation">
+                <li><a id="nav-home" href="index.html">Home Page</a></li>
+            </nav>
+        </div>
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+        <div class="header-right">
+            <button id="lang-toggle" onclick="toggleLanguage()">العربي من هنا يا جيماوي</button>
+        </div>
+    </header>
+    <div class="login-container">
+        <h2 id="login-header">Login</h2>
+        <form class="login-form">
+            <input type="text" id="username-input" placeholder="Username" required>
+            <input type="password" id="password-input" placeholder="Password" required>
+            <button type="submit" id="login-button">Login</button>
+        </form>
+    </div>
+    <script>
+        let isArabic = false;
+
+        function toggleLanguage() {
+            isArabic = !isArabic;
+            document.body.style.direction = isArabic ? 'rtl' : 'ltr';
+            document.getElementById('page-title').textContent = isArabic ? 'جماوي - تسجيل الدخول' : 'Gemmawy - Login';
+            document.getElementById('login-header').textContent = isArabic ? 'تسجيل الدخول' : 'Login';
+            document.getElementById('username-input').placeholder = isArabic ? 'اسم المستخدم' : 'Username';
+            document.getElementById('password-input').placeholder = isArabic ? 'كلمة المرور' : 'Password';
+            document.getElementById('login-button').textContent = isArabic ? 'دخول' : 'Login';
+            document.getElementById('nav-home').textContent = isArabic ? 'الصفحة الرئيسية' : 'Home Page';
+            document.getElementById('lang-toggle').textContent = isArabic ? 'ENGLISH' : 'العربي';
+        }
+    </script>
+</body>
+
+</html>
